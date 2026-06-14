@@ -1,0 +1,32 @@
+local level_data = {
+	"#level_proxy"
+}
+
+local scroll_speed = 0
+local scroll_acceleration = {1, 2, 3} -- update based on level
+local current_level = 1
+local state = "menu"
+
+
+function init(self)
+	msg.post("#level_proxy", "load")
+	local width, height = window.get_size()
+	local scale_factor = 4
+	local window_w = width * scale_factor 
+	local window_h = height * scale_factor
+	
+	
+	window.set_size(window_w, window_h)
+	local window_x = 1920/2 - window_w /2
+	local window_y = 1080/2 - window_h/2
+	window.set_position(window_x, window_y)
+
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+		msg.post(sender, "acquire_input_focus")
+	end
+end

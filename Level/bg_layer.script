@@ -1,0 +1,33 @@
+-- Define instance (script) properties
+go.property("anim", hash("")) --Assigns the proper background layer
+go.property("scroll_mult", 1) -- Closest layer scrolls at full speed x1 and furthest layer doesnt scroll (x0)
+go.property("depth", -1)
+
+
+local SPEED = 120
+
+function init(self)
+	local pos = go.get_position()
+	pos.z = self.depth
+	go.set_position(pos)
+	msg.post("#sprite", "play_animation", {id = self.anim})
+	msg.post("#sprite1", "play_animation", {id = self.anim})
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	print(dt)
+	local pos = go.get_position()
+	local effective_speed = SPEED * self.scroll_mult * dt
+	pos.x = pos.x - effective_speed
+	if pos.x <= -144 then
+		pos.x = 143
+	end
+	--pos.x = math.floor(pos.x)
+	go.set_position(pos)
+end

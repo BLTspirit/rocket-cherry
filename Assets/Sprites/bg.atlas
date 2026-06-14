@@ -1,0 +1,60 @@
+images {
+  image: "/Assets/Sprites/Background Images/bg_1/bg_1_1.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_1/bg_1_2.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_1/bg_1_3.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_1/bg_1_4.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_1/bg_1_5.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_1.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_2.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_3.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_4.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_5.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_2/bg_2_6.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_3/bg_3_1.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_3/bg_3_2.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_3/bg_3_3.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_3/bg_3_4.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_3/bg_3_5.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_4/bg_4_1.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_4/bg_4_2.png"
+}
+images {
+  image: "/Assets/Sprites/Background Images/bg_4/bg_4_3.png"
+}
+margin: 1
+extrude_borders: 2
+inner_padding: 1

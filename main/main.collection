@@ -1,0 +1,6 @@
+name: "main"
+instances {
+  id: "game_manager"
+  prototype: "/main/game_manager.go"
+}
+scale_along_z: 0

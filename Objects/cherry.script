@@ -1,0 +1,61 @@
+
+
+-- Start position
+local x = 10
+local window_w, window_h = sys.get_config("display")
+local min_x = 0
+local min_y = 0
+local max_x = 288
+local max_y = 208
+local start_y = 3 * max_y / 4
+local start_pos = vmath.vector3(x, start_y, 0)
+local is_boosting = false
+local was_rising_last_frame = false
+local boost_speed = 200
+
+-- Animation
+local spr_rise_id = hash("cherry_boost")
+local spr_fall_id = hash("spr_cherry_idle")
+
+-- Movement params
+local gravity = 5
+local y_speed = 0
+local function clamp(value, min, max)
+	return math.max(min, math.min(value, max))
+end
+
+function init(self)
+	print("cherry initialized")
+	msg.post(".", "acquire_input_focus")
+	go.set_position(start_pos)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("boost") and action.pressed then
+		y_speed = boost_speed
+	end
+end
+
+function fixed_update(self, dt)
+	-- Update position
+	local pos = go.get_position()
+	pos.y = pos.y + y_speed * dt
+	if (pos.y > max_y) then
+		y_speed = 0
+	end
+	pos.y = clamp(pos.y, min_y, max_y)
+	go.set_position(pos)
+	y_speed = y_speed - gravity
+
+	-- Update sprite
+	local is_rising = (y_speed > 0)
+	if is_rising ~= was_rising_last_frame then
+		if y_speed > 0 then
+			sprite.play_flipbook("#sprite", spr_rise_id)
+		else 
+			sprite.play_flipbook("#sprite", spr_fall_id)
+		end
+	end
+	was_rising_last_frame = is_rising
+end
+

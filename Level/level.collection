@@ -1,0 +1,35 @@
+name: "level_0"
+instances {
+  id: "cherry"
+  prototype: "/Objects/cherry.go"
+  position {
+    x: 63.0
+    y: 96.0
+  }
+}
+instances {
+  id: "camera_go"
+  prototype: "/main/Camera/camera_go.go"
+  position {
+    x: 144.0
+    y: 104.0
+    z: 100.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "bg_manager"
+  data: "components {\n"
+  "  id: \"bg_manager\"\n"
+  "  component: \"/Level/bg_manager.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"bg_layer_factory\"\n"
+  "  component: \"/Level/bg_layer_factory.factory\"\n"
+  "}\n"
+  ""
+  position {
+    x: 144.0
+    y: 104.0
+  }
+}
