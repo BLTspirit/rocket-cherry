@@ -13,7 +13,8 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 288.0
+    x: 432.0
+    y: 104.0
   }
 }
 embedded_components {
@@ -26,4 +27,8 @@ embedded_components {
   "  texture: \"/Assets/Sprites/bg.atlas\"\n"
   "}\n"
   ""
+  position {
+    x: 144.0
+    y: 104.0
+  }
 }

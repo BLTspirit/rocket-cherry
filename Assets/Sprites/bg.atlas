@@ -55,6 +55,4 @@ images {
 images {
   image: "/Assets/Sprites/Background Images/bg_4/bg_4_3.png"
 }
-margin: 1
 extrude_borders: 2
-inner_padding: 1

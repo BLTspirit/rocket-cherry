@@ -14,20 +14,13 @@ function init(self)
 	msg.post("#sprite1", "play_animation", {id = self.anim})
 end
 
-function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
 function fixed_update(self, dt)
-	print(dt)
 	local pos = go.get_position()
 	local effective_speed = SPEED * self.scroll_mult * dt
 	pos.x = pos.x - effective_speed
-	if pos.x <= -144 then
-		pos.x = 143
+	if pos.x <= -288 then -- If left bg sprite goes completely offscreen, move it to the original position
+		pos.x = 0
 	end
-	--pos.x = math.floor(pos.x)
+	pos.x = math.floor(pos.x + 0.5)
 	go.set_position(pos)
 end

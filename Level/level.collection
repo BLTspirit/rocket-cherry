@@ -28,8 +28,4 @@ embedded_instances {
   "  component: \"/Level/bg_layer_factory.factory\"\n"
   "}\n"
   ""
-  position {
-    x: 144.0
-    y: 104.0
-  }
 }
