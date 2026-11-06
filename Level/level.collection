@@ -18,6 +18,29 @@ instances {
 }
 scale_along_z: 0
 embedded_instances {
+  id: "tst_obj"
+  data: "components {\n"
+  "  id: \"test-obj\"\n"
+  "  component: \"/Objects/test-obj.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"spr_cherry_idle\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/Assets/Sprites/cherry_and_terrain.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 18.0
+    y: 51.0
+  }
+}
+embedded_instances {
   id: "bg_manager"
   data: "components {\n"
   "  id: \"bg_manager\"\n"

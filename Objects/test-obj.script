@@ -1,0 +1,35 @@
+-- test-obj.script
+local SPEED = 100
+
+function init(self) 
+	self.h_input = 0
+	self.input_right = 0
+	self.input_left = 0
+	msg.post(".", "acquire_input_focus")
+end
+
+function update(self, dt)
+	if self.h_input ~= 0 then
+		local pos = go.get_position()
+		pos.x = pos.x + SPEED * self.h_input * dt
+		go.set_position(pos)
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("left") then 
+		if action.pressed then
+			self.input_left = 1
+		elseif action.released then
+			self.input_left = 0
+		end
+	end
+	if action_id == hash("right") then
+		if action.pressed then
+			self.input_right = 1
+		elseif action.released then
+			self.input_right = 0
+		end
+	end
+	self.h_input = self.input_right - self.input_left
+end
